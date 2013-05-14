@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>camel-sandbox</groupId>
+    <artifactId>camel-sandbox</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <camel-version>2.10.0</camel-version>
+        <slf4j-api-version>1.6.6</slf4j-api-version>
+        <slf4j-version>1.7.2</slf4j-version>
+        <log4j-version>1.2.17</log4j-version>
+        <junit-version>4.11</junit-version>
+    </properties>
+
+    <modules>
+        <module>csv</module>
+        <module>bindy</module>
+        <module>gpg-integration</module>
+        <module>camel-splitting</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>${camel-version}</version>
+        </dependency>
+
+        <!--Testing-->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test</artifactId>
+            <version>${camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <version>${junit-version}</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-bindy</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-csv</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-crypto</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
