@@ -22,6 +22,7 @@
         <module>bindy</module>
         <module>gpg-integration</module>
         <module>camel-splitting</module>
+        <module>one-off</module>
     </modules>
 
     <dependencies>
