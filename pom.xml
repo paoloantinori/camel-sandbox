@@ -22,6 +22,7 @@
         <module>bindy</module>
         <module>gpg-integration</module>
         <module>camel-splitting</module>
+        <module>activemq-things</module>
     </modules>
 
     <dependencies>
@@ -30,11 +31,7 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j-version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
-            <version>${camel-version}</version>
-        </dependency>
+
 
         <!--Testing-->
         <dependency>
@@ -54,6 +51,11 @@
         <dependencies>
             <dependency>
                 <groupId>org.apache.camel</groupId>
+                <artifactId>camel-core</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
                 <artifactId>camel-bindy</artifactId>
                 <version>${camel-version}</version>
             </dependency>
@@ -65,6 +67,11 @@
             <dependency>
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-crypto</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-jms</artifactId>
                 <version>${camel-version}</version>
             </dependency>
         </dependencies>
