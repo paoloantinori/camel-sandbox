@@ -23,6 +23,7 @@
         <module>gpg-integration</module>
         <module>camel-splitting</module>
         <module>activemq-things</module>
+        <module>one-off</module>
     </modules>
 
     <dependencies>
