@@ -12,7 +12,7 @@ public class StreamTestMain {
         context.addRoutes(new RouteBuilder() {
             @Override
             public void configure() throws Exception {
-                from("stream:in?promptMessage=Enter something:").marshal().gzip().to("stream:out");
+                from("stream:in?promptMessage=Enter something:").marshal().base64().to("stream:out");
             }
         });
 
