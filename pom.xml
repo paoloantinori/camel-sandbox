@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <camel-version>2.10.0</camel-version>
+        <camel-version>2.11.0</camel-version>
         <slf4j-api-version>1.6.6</slf4j-api-version>
         <slf4j-version>1.7.2</slf4j-version>
         <log4j-version>1.2.17</log4j-version>
@@ -22,7 +22,9 @@
         <module>bindy</module>
         <module>gpg-integration</module>
         <module>camel-splitting</module>
+        <module>activemq-things</module>
         <module>one-off</module>
+        <module>basic</module>
     </modules>
 
     <dependencies>
@@ -31,11 +33,7 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j-version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
-            <version>${camel-version}</version>
-        </dependency>
+
 
         <!--Testing-->
         <dependency>
@@ -55,6 +53,11 @@
         <dependencies>
             <dependency>
                 <groupId>org.apache.camel</groupId>
+                <artifactId>camel-core</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
                 <artifactId>camel-bindy</artifactId>
                 <version>${camel-version}</version>
             </dependency>
@@ -66,6 +69,11 @@
             <dependency>
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-crypto</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-jms</artifactId>
                 <version>${camel-version}</version>
             </dependency>
         </dependencies>
