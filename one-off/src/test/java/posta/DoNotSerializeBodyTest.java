@@ -36,6 +36,9 @@ public class DoNotSerializeBodyTest extends CamelTestSupport {
     BrokerService broker;
 
 
+    // this just boostraps the route + broker... you'll need to fire up
+    // activemq-things/src/test/java/posta/DumySendToActiveMQTest to see
+    // the object message and serialization come through
     @Test
     public void testRouteForObjectSerialization() throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
