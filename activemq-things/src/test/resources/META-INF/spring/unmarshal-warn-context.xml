@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       ">
+
+    <bean id="myProcessor" class="posta.MyProcessor"/>
+
+    <camel:camelContext id="testContext" >
+        <camel:dataFormats>
+            <camel:serialization id="javaSerialization"/>
+        </camel:dataFormats>
+        <camel:route id="writeToQueu">
+            <camel:from uri="timer:dummyTimer?period=2000" />
+            <!-- Put bean with BigDecimal or BigInteger into exchange body. -->
+            <camel:process ref="myProcessor" />
+            <camel:convertBodyTo type="posta.TheBean"/>
+            <camel:marshal ref="javaSerialization" />
+            <camel:log message="Sending message.."/>
+            <camel:to uri="activemq:out" />
+        </camel:route>
+
+        <camel:route>
+            <camel:from uri="activemq:out"/>
+            <camel:unmarshal ref="javaSerialization" />
+            <camel:convertBodyTo type="posta.TheBean"/>
+            <camel:log message="Received message ${body}"/>
+        </camel:route>
+    </camel:camelContext>
+
+    <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
+        <property name="brokerURL" value="vm:broker:()/localhost"/>
+    </bean>
+</beans>

@@ -10,7 +10,8 @@
     <packaging>pom</packaging>
 
     <properties>
-        <camel-version>2.11.0</camel-version>
+        <camel-version>2.9.1</camel-version>
+        <!--<camel-version>2.12.0</camel-version>-->
         <slf4j-api-version>1.6.6</slf4j-api-version>
         <slf4j-version>1.7.2</slf4j-version>
         <log4j-version>1.2.17</log4j-version>

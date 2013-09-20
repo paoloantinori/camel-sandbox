@@ -21,7 +21,7 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.component.jms.JmsComponent;
 import org.apache.camel.component.jms.JmsMessage;
-import org.apache.camel.test.CamelTestSupport;
+import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.Test;
 
 import javax.jms.JMSException;
@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author <a href="http://www.christianposta.com/blog">Christian Posta</a>
  */
-public class DumySendToActiveMQTest extends CamelTestSupport{
+public class DumySendToActiveMQTest extends CamelTestSupport {
 
     @Test
     public void testFoo() throws InterruptedException, JMSException {
