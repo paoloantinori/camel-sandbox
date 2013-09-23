@@ -27,6 +27,7 @@
         <module>activemq-things</module>
         <module>one-off</module>
         <module>basic</module>
+        <module>camel-2.11.1-issues</module>
     </modules>
 
     <dependencies>
