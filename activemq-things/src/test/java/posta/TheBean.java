@@ -23,25 +23,9 @@ import java.math.BigInteger;
  * @author <a href="http://www.christianposta.com/blog">Christian Posta</a>
  */
 public class TheBean implements Serializable {
-    int status;
-    String name;
+
     BigInteger value;
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public BigInteger getValue() {
         return value;
