@@ -47,7 +47,7 @@ public class TestBasicRoute extends CamelTestSupport {
         return new RouteBuilder() {
             @Override
             public void configure() throws Exception {
-                final DataFormat bindy = new BindyCsvDataFormat(Record.class);
+                final DataFormat bindy = new BindyCsvDataFormat();
 
                 // todo - expose as rest service, retrieve from DB w mybatis, xfer to FTP
                 from(startEndpoint)

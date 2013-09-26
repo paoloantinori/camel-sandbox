@@ -41,7 +41,7 @@ public class TestBindy extends CamelTestSupport {
 
     @Override
     protected RouteBuilder createRouteBuilder() throws Exception {
-        final DataFormat bindy = new BindyCsvDataFormat(ModelClass.class);
+        final DataFormat bindy = new BindyCsvDataFormat();
         return new RouteBuilder() {
             @Override
             public void configure() throws Exception {

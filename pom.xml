@@ -26,9 +26,9 @@
         <module>camel-splitting</module>
         <module>activemq-things</module>
         <module>one-off</module>
-        <module>basic</module>
         <module>camel-2.11.1-issues</module>
         <module>camel-2.10.4-issues</module>
+        <module>activemq-5.9-issues</module>
     </modules>
 
     <dependencies>

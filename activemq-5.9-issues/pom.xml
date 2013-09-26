@@ -9,18 +9,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>basic</artifactId>
+    <artifactId>activemq-5.9-issues</artifactId>
+    <properties>
+        <activemq-version>5.9-SNAPSHOT</activemq-version>
+    </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-stream</artifactId>
-            <version>${camel-version}</version>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-broker</artifactId>
+            <version>${activemq-version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-base64</artifactId>
-            <version>${camel-version}</version>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-kahadb-store</artifactId>
+            <version>${activemq-version}</version>
         </dependency>
     </dependencies>
 </project>

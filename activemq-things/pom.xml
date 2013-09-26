@@ -12,6 +12,7 @@
     <artifactId>activemq-things</artifactId>
 
     <properties>
+        <camel-version>2.11.1</camel-version>
     </properties>
 
     <dependencies>
