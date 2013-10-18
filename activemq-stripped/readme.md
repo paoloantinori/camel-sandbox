@@ -4,10 +4,10 @@ the KahaDB message store.
 
 The following are the only required dependencies to make this happen:
 
-activemq-broker
-activemq-kahadb-store
-activemq-client
-slf4j-api
-hawtbuf
-geronimo-jms_1.1_spec
-geronimo-j2ee-management_1.1_spec
+* activemq-broker
+* activemq-kahadb-store
+* activemq-client
+* slf4j-api
+* hawtbuf
+* geronimo-jms_1.1_spec
+* geronimo-j2ee-management_1.1_spec
