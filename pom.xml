@@ -30,6 +30,7 @@
         <module>camel-2.10.4-issues</module>
         <module>activemq-5.9-issues</module>
         <module>activemq-5.8-issues</module>
+        <module>camel-snapshot</module>
     </modules>
 
     <dependencies>
