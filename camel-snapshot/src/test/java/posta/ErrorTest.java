@@ -16,6 +16,8 @@
  */
 package posta;
 
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.Test;
@@ -26,10 +28,18 @@ public class ErrorTest extends CamelTestSupport {
     public void testErrorIsThrown() throws Exception {
 
         getMockEndpoint("mock:foundException").expectedMessageCount(1);
-        getMockEndpoint("mock:never").expectedMessageCount(0);
+        getMockEndpoint("mock:never").expectedMessageCount(3);
+
+        getMockEndpoint("mock:never").whenAnyExchangeReceived(new Processor() {
+            @Override
+            public void process(Exchange exchange) throws Exception {
+                throw new RuntimeException();
+            }
+        });
 
         try {
             template.sendBody("direct:start", "test");
+            fail("Should propagate error and not reach here");
         } catch (Exception e) {
             System.out.println("Caught exception");
         }
@@ -47,9 +57,8 @@ public class ErrorTest extends CamelTestSupport {
                 from("direct:start")
                         .to("direct:internal");
 
-                from("direct:internal")
+                from("direct:internal").id("2")
                         .errorHandler(defaultErrorHandler().maximumRedeliveries(2))
-                        .throwException(new RuntimeException())
                         .to("mock:never");
             }
         };
