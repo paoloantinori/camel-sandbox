@@ -20,6 +20,7 @@ public class TestCsv extends CamelTestSupport {
 
     @Test
     public void testDriveCsv() {
+        System.out.println("Whatever");
 
         NotifyBuilder notifier = new NotifyBuilder(context).whenDone(1).create();
 
